@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .maincontent {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .maincontent h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .maincontent p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team li {
+            text-align: center;
+            position: relative;
+        }
+
+        .team li img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team li img:hover {
+            transform: scale(1.1);
+        }
+
+        .info-box-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-box-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+            border: 1px solid #ccc;
+            background-image: linear-gradient(45deg, #ffffff, #f0f0f0);
+        }
+
+        .info-box-content img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .info-box-content p {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .info-box-overlay {
+            display: none; /* Add this line to hide the info boxes by default */
+            /* Existing styles */
+        }
+
+        /* Improved button styling */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            outline: none;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #3e8e41;
+        }
+
+        button:focus {
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Centering the button */
+        .centered-button {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px; /* Adding margin to center vertically */
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML for the navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="logo"><a href="index.html"><img src="logo.png" alt="Logo"></a></li>
+            <li><a href="kits.html">Kits</a></li>
+            <li><a href="https://www.sbhs.school.nz">School Website</a></li>
+        </ul>
+    </nav>
+
+    <div class="maincontent">
+        <h1>History</h1>
+        <p>The Southland Boys' High School Robotics Club was established in 2019 under the leadership of Dr. J Andrew Welsman. Initially comprising just five members, one of the earliest enthusiasts was Jacob Wilkinson-Hall, who assumed the mantle of student leader from 2020 to 2023 (November). In 2021, the club ventured into fundraising by selling chocolate to finance its participation in the VEX VRC & IQR games. Over the course of the year, the club engaged in three online competitions: the poster challenge, adeptly tackled by Dyllan Quiri and Jacob Wilkinson-Hall; the reverse engineering challenge, also tackled by the dynamic duo; and a project on robotics in the medical field, led by Oshadha Perera. However, the year 2023 brought unfortunate news - it was announced that Mr. Welsman would be relocating to Australia, marking the end of his tenure with the club. With his departure at the end of term 1, the club found itself without guidance for two terms. Yet, in term 3, week 6, Jacob Wilkinson-Hall rose to the occasion, assuming the role of club leader with the assistance of Mrs. Sales. Through their concerted efforts, the club underwent a revival, swelling its ranks to 31 members - a record high. As the calendar flipped to 2024, Jacob Wilkinson-Hall continued to steer the club, now with Lachlan Bradley taking up the mantle of year 8 leader.</p>
+        <!-- Button to play audio -->
+        <div class="centered-button">
+            <button onclick="playAudio()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M3 12l4-4v8l-4-4zm18-4v8h-4v-2h2V8h-2V6h4zM14 6v12h-2V6h2zm-6 8v2H6v-2h2z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+                Play Audio
+            </button>
+        </div>
+        <!-- Audio element -->
+        <audio id="myAudio">
+            <source src="ic/tts.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio> 
+
+        <h1>Team</h1>
+        <p>Click image of person to see more info about them</p>
+        <ul class="team">
+            <li>
+                <img src="ic/jacob.jfif" alt="Jacob Wilkinson-Hall" onclick="showInfo('modal1')">
+                <div id="modal1" class="info-box-overlay">
+                    <div class="info-box-content">
+                        <span class="close" onclick="closeInfo('modal1')">&times;</span>
+                        <img src="ic/jacob.jfif" alt="Jacob Wilkinson-Hall">
+                        <p><strong>Name:</strong> Jacob Wilkinson-Hall</p>
+                        <p><strong>Role:</strong> Club Leader</p>
+                        <p><strong>About:</strong> Since Term 3 of 2023, Jacob has held the position of club leader, taking over from Dr. J. Andrew Welsman following his relocation to Australia. Jacob's involvement in the robotics club began as its first member, demonstrating his early leadership aptitude. He also served as a student leader from 2020 to 2023, showcasing his commitment to guiding and inspiring his peers.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="ic/about.jpeg" alt="Mrs. Sales" onclick="showInfo('modal2')">
+                <div id="modal2" class="info-box-overlay">
+                    <div class="info-box-content">
+                        <span class="close" onclick="closeInfo('modal2')">&times;</span>
+                        <img src="ic/about.jpeg" alt="Mrs. Sales">
+                        <p><strong>Name:</strong> Mrs. Sales</p>
+                        <p><strong>Role:</strong> Staff Support</p>
+                        <p><strong>About:</strong> Since 2023, Mrs. Sales has served as staff support. She assumed this role with the intention of delving deeper into the field of robotics and expanding her knowledge in the subject. </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img src="ic/lachlan.jpeg" alt="Lachlan Bradley" onclick="showInfo('modal3')">
+                <div id="modal3" class="info-box-overlay">
+                    <div class="info-box-content">
+                        <span class="close" onclick="closeInfo('modal3')">&times;</span>
+                        <img src="ic/lachlan.jpeg" alt="Lachlan Bradley">
+                        <p><strong>Name:</strong> Lachlan Bradley</p>
+                        <p><strong>Role:</strong> Year 8 Leader</p>
+                        <p><strong>About:</strong> Lachlan Bradley has served as the year 8 leader since Term 1 of 2024, providing an additional hand to assist with various tasks.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript function to display info box after page load
+        document.addEventListener("DOMContentLoaded", function() {
+            // Code to execute after the DOM content is fully loaded
+            // You can call the function to show info box here
+            // For example:
+            // showInfo('modal1');
+        });
+
+        // JavaScript function to display info box
+        function showInfo(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "flex";
+        }
+
+        // JavaScript function to close info box
+        function closeInfo(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        // JavaScript function to play audio
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
+</body>
+</html>

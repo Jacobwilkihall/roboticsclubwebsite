@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add a favicon for better branding -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Reset default margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Main content container */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* YouTube video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* Upcoming events box */
+        .upcoming-events {
+            background-color: #ff7f50;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .upcoming-events h2 {
+            margin-top: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .upcoming-events p {
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Gallery */
+        .gallery {
+            width: 100%;
+            text-align: center;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Clear floats */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Loading animation */
+        .loader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .loader img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide the loader when content is loaded */
+        .container {
+            display: none;
+        }
+
+        /* Show the container when content is loaded */
+        .container.loaded {
+            display: block;
+        }
+
+        /* Hide navigation during loading */
+        .nav-loading {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading animation -->
+    <div class="loader">
+        <img src="logo.png" alt="Logo">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation bar -->
+    <nav class="nav-loading">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="logo"><a href="index.html"><img src="logo.png" alt="Logo"></a></li>
+            <li><a href="kits.html">Kits</a></li>
+            <li><a href="https://www.sbhs.school.nz">School Website</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>LEARN HOW TO BUILD AND PROGRAM ROBOTS</h1>
+        
+        <!-- YouTube video -->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EYEpqzvoHGU?si=M5s4LrcastMCix7B" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Row for upcoming events and gallery -->
+        <div class="clearfix"></div>
+        <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <p>Event 1 - Date</p>
+            <p>Event 2 - Date</p>
+            <!-- Add more upcoming events as needed -->
+        </div>
+        <!-- Gallery -->
+        <div class="gallery">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <!-- Add images to your carousel -->
+                    <div class="carousel-item"><img src="ic/AlexDallas.jpg" alt="Image 1"></div>
+                    <div class="carousel-item"><img src="ic/TyroneMcleod.png" alt="Image 2"></div>
+                    <div class="carousel-item"><img src="ic/TobyKing.jpg" alt="Image 3"></div>
+                    <div class="carousel-item"><img src="ic/LachlanBradley.jpg" alt="Image 5"></div>
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for carousel functionality -->
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const slideCount = slides.length;
+
+        function showSlide(index) {
+            const offset = -index * 100;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            showSlide(currentIndex);
+        }
+
+        function autoPlay() {
+            setInterval(() => {
+                nextSlide();
+            }, 3000); // Change slide every 3 seconds
+        }
+
+        autoPlay();
+
+        // When content is loaded, hide the loader and show the content
+        window.addEventListener('load', function() {
+            document.querySelector('.loader').style.display = 'none';
+            document.querySelector('.container').classList.add('loaded');
+            // Show navigation after content is loaded
+            document.querySelector('.nav-loading').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

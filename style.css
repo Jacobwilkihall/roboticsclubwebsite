@@ -1,0 +1,142 @@
+/* Styling for the navigation bar */
+/* Navigation bar */
+nav {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Evenly space items */
+    align-items: center;
+}
+
+nav ul li {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+nav ul li.logo a {
+    text-decoration: none; /* Remove underline for logo */
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Bold text */
+    padding: 8px 12px; /* Add padding */
+    border-radius: 20px; /* Rounded corners */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+nav ul li.active a {
+    color: #007bff; /* Change color for active link */
+}
+
+nav ul li a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: transparent; /* Initially transparent */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav ul li a:hover:before {
+    visibility: visible;
+    background-color: #007bff; /* Blue underline on hover */
+    transform: scaleX(1);
+}
+
+nav ul li.logo a:hover:before {
+    background-color: transparent; /* No underline for logo on hover */
+}
+
+
+
+
+/* Styling for the logo */
+.logo {
+    position: relative; /* Position the logo relatively */
+}
+
+/* Styling for the logo image */
+.logo img {
+    height: 50px; /* Adjust height */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the logo is displayed as a block element */
+    margin: 0 auto; /* Center-align the logo horizontally */
+}
+
+
+.maincontent {
+    padding: 3em;
+    
+}
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+
+}
+
+
+/* Carousel Styles (Coded by CHATGPT)*/
+.carousel {
+    width: 600px; /* Adjust the width as needed */
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+.carousel-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 10px; /* Adjust the gap between items */
+    transition: transform 0.5s ease;
+}
+.carousel-item {
+    width: 100%;
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
+}
+/* Navigation Arrows */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.carousel-control-prev {
+    left: 10px;
+}
+.carousel-control-next {
+    right: 10px;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .maincontent {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .maincontent h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .maincontent p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .team li {
+            text-align: center;
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .team li img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team li img:hover {
+            transform: scale(1.1);
+        }
+
+        .info-box-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-box-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+            border: 1px solid #ccc;
+            background-image: linear-gradient(45deg, #ffffff, #f0f0f0);
+        }
+
+        .info-box-content img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .info-box-content p {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .info-box-overlay {
+        display: none; /* Add this line to hide the info boxes by default */
+        /* Existing styles */
+    }
+    </style>
+</head>
+<body>
+    <!-- HTML for the navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="logo"><a href="index.html"><img src="logo.png" alt="Logo"></a></li>
+            <li><a href="kits.html">Kits</a></li>
+            <li><a href="https://www.sbhs.school.nz">School Website</a></li>
+        </ul>
+    </nav>
+
+    <div class="maincontent">
+        <h1>Kits we use</h1>
+        <p>Click image of the kit to see more info about them</p>
+        <ul class="team">
+            <li>
+                <img src="ic/Lesson 1 Tile.png" alt="Jacob Wilkinson-Hall" onclick="showInfo('modal1')">
+                <div id="modal1" class="info-box-overlay">
+                    <div class="info-box-content">
+                        <span class="close" onclick="closeInfo('modal1')">&times;</span>
+                        <img src="ic/Lesson 1 Tile.png" alt="Jacob Wilkinson-Hall">
+                        <p><strong>Name:</strong> Vex IQ</p>
+                        <p><strong>About:</strong> VEX IQ is a snap-together robotics system designed from the ground up to provide novice users the chance to find success quickly, while still being able to constantly challenge more advanced users.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+  
+            <li>
+                <img src="ic/276-7010_1.webp" alt="Lachlan Bradley" onclick="showInfo('modal3')">
+                <div id="modal3" class="info-box-overlay">
+                    <div class="info-box-content">
+                        <span class="close" onclick="closeInfo('modal3')">&times;</span>
+                        <img src="ic/276-7010_1.webp" alt="Lachlan Bradley">
+                        <p><strong>Name:</strong> Vex V5</p>
+                        <p><strong>About:</strong> VEX V5 represents our fifth generation of education robotics systems developed with 20 years of experience using robotics to teach STEM principles. V5 electronics are approachable, flexible and powerful, using state of the art technology to ensure relevant education outcomes.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+           // JavaScript function to display info box after page load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Code to execute after the DOM content is fully loaded
+        // You can call the function to show info box here
+        // For example:
+        // showInfo('modal1');
+    });
+
+    // JavaScript function to display info box
+    function showInfo(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "flex";
+    }
+
+    // JavaScript function to close info box
+    function closeInfo(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "none";
+    }
+    </script>
+</body>
+</html>
